@@ -1,0 +1,4 @@
+{
+  "provider": "node",
+  "start": "node server.js"
+}
