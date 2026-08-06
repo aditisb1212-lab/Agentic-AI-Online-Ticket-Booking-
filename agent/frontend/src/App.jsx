@@ -49,7 +49,7 @@ export default function App() {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch('https://agentic-ai-ticket-booking-4.onrender.com/api/events');
+      const response = await fetch(' https://agentic-ai-online-ticket-booking-xvas.onrender.com/api/events');
       const data = await response.json();
       setEvents(data);
       if (data.length > 0 && !selectedEvent) {
@@ -67,7 +67,7 @@ export default function App() {
     setCheckoutError('');
     
     try {
-      const response = await fetch(`https://agentic-ai-ticket-booking-4.onrender.com/api/events/${event.id}`);
+      const response = await fetch(` https://agentic-ai-online-ticket-booking-xvas.onrender.com/api/events/${event.id}`);
       const data = await response.json();
       setSeats(data.seats);
     } catch (err) {
@@ -79,7 +79,7 @@ export default function App() {
     if (!user) return;
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`https://agentic-ai-ticket-booking-4.onrender.com/api/bookings/user/${user.id}`, {
+      const response = await fetch(` https://agentic-ai-online-ticket-booking-xvas.onrender.com/api/bookings/user/${user.id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -116,7 +116,7 @@ export default function App() {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await fetch('https://agentic-ai-ticket-booking-4.onrender.com/api/bookings', {
+      const response = await fetch(' https://agentic-ai-online-ticket-booking-xvas.onrender.com/api/bookings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -149,7 +149,7 @@ export default function App() {
     if (!window.confirm('Are you sure you want to cancel this booking and release the seats?')) return;
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`https://agentic-ai-ticket-booking-4.onrender.com/api/bookings/${bookingId}/cancel`, {
+      const response = await fetch(` https://agentic-ai-online-ticket-booking-xvas.onrender.com/api/bookings/${bookingId}/cancel`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
